@@ -1,14 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container } from '@mui/material'
 import { UseFetch } from './UseFetch'
 import { Cards } from './Cards'
 
 const Main = () => {
 
-    const [url, setUrl] = useState('https://pokeapi.co/api/v2/pokemon/')
+    const [url, setUrl] = useState(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=60`);
     const estado = UseFetch(url)
     const {cargando, data} = estado
     cargando?console.log('cargando'):console.log(data.results);
+    
 
     return (
         <main
@@ -42,6 +43,7 @@ const Main = () => {
                 }
             
            </Container>
+
         </main>
     )
 }

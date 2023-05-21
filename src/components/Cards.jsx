@@ -17,10 +17,10 @@ export const Cards = ({results}) => {
                     flexDirection:"column",
                     justifyContent: "center",
                     alignItems: "center",
-                    width: "20%",
-                    height:"450px",
+                    width: "250px",
+                    height:"350px",
                     margin:"20px",
-                    border:"2px solid white"
+                    borderRadius:"15px"
                    }} 
                 >
                    <CardPokemon 
