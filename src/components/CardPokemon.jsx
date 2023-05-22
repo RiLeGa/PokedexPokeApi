@@ -44,18 +44,53 @@ export const CardPokemon = ({ url }) => {
             {/* Muestra un spinner o una animación de carga */}
           </div>
         ) : (
-          <div className="name">
-            <h2 style={{ position: 'absolute', top: '-0.5em', right: '1em' }}>{data.id}</h2>
+          <div >
+            
+            <div 
+            style={{
+              display:"flex"
+            }}>
+              {
+                data.types.map(tipo => (
+                  <h2
+                    key={tipo.type.name}
+                    style={{
+                      fontFamily: "fantasy",
+                      textTransform: "uppercase",
+                      width: "20%",
+                      textAlign: "center",
+                      fontSize: "10px",
+                      backgroundImage: getTypeGradient(tipo.type.name),
+                      border: "1px solid black",
+                      color: "black"  // Agrega el estilo de color de texto
+                    }}
+                  >{tipo.type.name}
+                  </h2>
+                ))
+              }
+            </div>
+          
+            <h2 style={{ fontFamily:"fantasy", position: 'absolute', top: '-0.5em', right: '1em' }}>#{data.id}</h2>
             <img 
             style={{
               width:"200px"
             }}
-            src={data.sprites.front_default} alt="" />
+            src={data.sprites.other.home.front_default} alt="" />
             <h2 
             style={{
-              textTransform:"capitalize"
+              fontFamily:"fantasy",
+              textTransform:"uppercase",
+              width:"100%",
+              textAlign:"center"
             }}
             >{data.forms[0].name}</h2>
+             <div 
+             style={{
+              display:"flex"
+             }}>
+          
+        </div>
+            
           </div>
         )}
       </article>

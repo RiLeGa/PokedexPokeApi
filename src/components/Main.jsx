@@ -18,7 +18,11 @@ const Main = () => {
             flexDirection:"column",
             justifyContent: "center",
             alignItems: "center",
-            width: "100vw"
+            width: "100vw",
+            backgroundAttachment:"fixed",
+            backgroundImage: "url(https://i.gifer.com/E5Uo.gif)",
+            backgroundSize: "100vw 100vh",
+            backgroundRepeat: "no-repeat",
           }}>
             <h1>Tu Pokedex</h1>
             <Container 
@@ -28,6 +32,7 @@ const Main = () => {
                 justifyContent: "center",
                 alignItems: "center",
                 maxWidth:"none",
+                padding: 0,
                 width: "100vw"
               }}
               >

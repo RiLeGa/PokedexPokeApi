@@ -19,7 +19,7 @@ const TuComponente = () => {
           flexDirection: "row",
           justifyContent: "left",
           alignItems: "center",
-          width: "100px",
+          width: "80px",
           padding: "5px"
         }}
         src={logo}

@@ -15,16 +15,28 @@ export const Header = () => {
       backgroundColor: "red"
     }}>
 
-      
-      <Logo/>
-
-
+      <section style={{
+        display: "flex"
+      }}>
+        <Logo/>
         <h2
         style={{
           color:"yellow",
         }} >  Pokedex</h2>
+      </section>
 
-      
+        <section>
+          <input
+            style={{
+              width:"250px",
+              borderRadius:"15px",
+              padding:"15px",
+              position:"absolute",
+              right:"10px",
+              top:"25px"
+            }}
+          type="search" name="" id="" placeholder="Buscar Pokemon" />
+        </section>
         
     </header>
     </>
