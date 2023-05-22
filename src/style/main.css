@@ -1,0 +1,50 @@
+main{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    background-attachment:fixed;
+    background-image: url(https://i.gifer.com/E5Uo.gif);
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat
+}
+.card{
+    position: relative;
+    width: 250px;
+    height: 350px;
+    border-radius: 15px
+}
+.frontCard{
+    display: flex;
+    transform: perspective(600px) rotateY(0deg);
+    z-index: 3;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 350px;
+    border: 10px solid yellow;
+    border-radius: 15px;
+    position: absolute;
+    transition: .5s;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+.cardBack{
+    display: flex;
+    transform: perspective(600px) rotateY(180deg);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 350px;
+    border: 10px solid yellow;
+    border-radius: 15px;
+}
+.card:hover .frontCard{
+    transform: perspective(600px) rotateY(180deg);
+}
+.card:hover .cardBack{
+    transform: perspective(600px) rotateY(180deg);
+}

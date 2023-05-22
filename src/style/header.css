@@ -1,0 +1,17 @@
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    width: 100vw;
+    padding: 5px 0;
+    background-color: red
+}
+.search{
+    width: 250px;
+    border-radius: 15px;
+    padding: 15px;
+    position: absolute;
+    right: 10px;
+    top: 15px
+}

@@ -25,20 +25,11 @@ export const CardPokemon = ({ url }) => {
     }
   
     const cardStyle = {
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
       backgroundImage: backgroundGradient,
-      width: '100%',
-      height: '350px',
-      border: '10px solid yellow',
-      borderRadius: '15px',
-      position: 'relative',
     };
   
     return (
-      <article style={cardStyle}>
+      <article className='frontCard' style={cardStyle}>
         {cargando ? (
           <div className="loading-spinner">
             {/* Muestra un spinner o una animación de carga */}

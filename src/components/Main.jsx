@@ -1,30 +1,35 @@
 import React, { useEffect, useState } from 'react'
 import { Container } from '@mui/material'
 import { UseFetch } from './UseFetch'
-import { Cards } from './Cards'
+import {CardPokemon} from './CardPokemon';
+import {CardBack} from './CardBack';
 
 const Main = () => {
 
     const [url, setUrl] = useState(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=60`);
     const estado = UseFetch(url)
     const {cargando, data} = estado
-    cargando?console.log('cargando'):console.log(data.results);
     
 
+    const [search, setSearch] = useState("")
+
+    const searcher = (e) => {
+      setSearch(e.target.value)
+      console.log(e.target.value);
+    }
+
+    const devolucion = !search ? data : data.results.filter((pokemon) =>
+  pokemon.name.toLowerCase().includes(search.toLowerCase()));
+  
     return (
-        <main
-        style={{
-            display: "flex",
-            flexDirection:"column",
-            justifyContent: "center",
-            alignItems: "center",
-            width: "100vw",
-            backgroundAttachment:"fixed",
-            backgroundImage: "url(https://i.gifer.com/E5Uo.gif)",
-            backgroundSize: "100vw 100vh",
-            backgroundRepeat: "no-repeat",
-          }}>
+
+        <main>
             <h1>Tu Pokedex</h1>
+
+            <section>
+              <input value={search} onChange={searcher} className="search" type="text" name="" placeholder="Buscar Pokemon" />
+            </section>
+
             <Container 
             style={{
                 display: "flex",
@@ -37,15 +42,28 @@ const Main = () => {
               }}
               >
 
-                {
+{cargando ? (
+  <h1 style={{ color: "black" }}>Cargando...</h1>
+) : devolucion && devolucion.results ? (
+  devolucion.results.map((pokemon => {
+                      
+                            return(
+                            <div className='card'
+                            key={pokemon.name}
+                            >
+                               <CardPokemon 
+                               url={pokemon.url}
+                                />
+                              <CardBack
+                               url={pokemon.url}
+                              />
+                            </div>) }))
+                        ) : (
+                          <h1 style={{ color: "black" }}>No se encontraron resultados.</h1>
+                        )
 
-                    cargando
-                    ?
-                    <h1>Cargando...</h1>
-                    :
-                    <Cards results={data.results} ></Cards>
-
-                }
+                    }
+                
             
            </Container>
 
