@@ -60,19 +60,19 @@ export const CardBack = ({ url }) => {
               textAlign:"center"
             }}
             >Abilities</h2>
-              { data.abilities.map(tipo => (
-
-                  <h3
-                  style={{
-                    fontFamily:"fantasy",
-                    textTransform:"uppercase",
-                    width:"100%",
-                    textAlign:"center",
-                    fontSize:"15px"
-                  }}
-                  >*{tipo.ability.name}*</h3>
-                ))
-              }
+              {data.abilities.slice(0, 2).map(tipo => (
+              <h3
+                style={{
+                  fontFamily: "fantasy",
+                  textTransform: "uppercase",
+                  width: "100%",
+                  textAlign: "center",
+                  fontSize: "15px"
+                }}
+              >
+                *{tipo.ability.name}*
+              </h3>
+              ))}
               <img 
             style={{
               width:"100px"
