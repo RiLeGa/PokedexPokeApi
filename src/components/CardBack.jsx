@@ -36,7 +36,18 @@ export const CardBack = ({ url }) => {
           </div>
         ) : (
           <div >
+
+{
+                data.abilities.map(tipo => (
+                  <h2>{tipo.ability.name}</h2>
+                ))
+              }
             
+             <div 
+             style={{
+              display:"flex"
+             }}>
+            </div>
             
           </div>
         )}
