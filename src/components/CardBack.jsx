@@ -31,24 +31,53 @@ export const CardBack = ({ url }) => {
     return (
       <article className='cardBack' style={cardStyle}>
         {cargando ? (
-          <div className="loading-spinner">
-            {/* Muestra un spinner o una animación de carga */}
-          </div>
+          <h2>Cargando...</h2>
         ) : (
           <div >
+            
+            <h2 
+            style={{
+              fontFamily:"fantasy",
+              textTransform:"uppercase",
+              width:"100%",
+              textAlign:"center"
+            }}
+            >Weight</h2>
+                <h3 style={{
+              fontFamily:"fantasy",
+              textTransform:"uppercase",
+              width:"100%",
+              textAlign:"center",
+              fontSize:"15px"
+            }}>
+                  {data.weight}</h3>
 
-{
-                data.abilities.map(tipo => (
-                  <h2>{tipo.ability.name}</h2>
+            <h2
+            style={{
+              fontFamily:"fantasy",
+              textTransform:"uppercase",
+              width:"100%",
+              textAlign:"center"
+            }}
+            >Abilities</h2>
+              { data.abilities.map(tipo => (
+
+                  <h3
+                  style={{
+                    fontFamily:"fantasy",
+                    textTransform:"uppercase",
+                    width:"100%",
+                    textAlign:"center",
+                    fontSize:"15px"
+                  }}
+                  >*{tipo.ability.name}*</h3>
                 ))
               }
-            
-             <div 
-             style={{
-              display:"flex"
-             }}>
-            </div>
-            
+              <img 
+            style={{
+              width:"100px"
+            }}
+            src={data.sprites.front_default} alt="" />
           </div>
         )}
       </article>

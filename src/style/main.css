@@ -37,7 +37,7 @@ main{
     transform: perspective(600px) rotateY(180deg);
     transition: .5s;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 250px;
     height: 350px;
